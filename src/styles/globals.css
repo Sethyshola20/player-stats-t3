@@ -1,16 +1,500 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+*{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: #ffffff;
+}
+body{
+   /* background-image: url(./Images/messi.jpg);*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    animation-name: show;
+    animation-duration: 1500ms;
+}
+@keyframes show{
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: .1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*
+    ===========card bg images
+*/
+/*#lewy{
+    background-image: url(./Images/card-photo/lewy.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#benzema {
+    background-image: url(./Images/card-photo/benze.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#salah {
+    background-image: url(./Images/card-photo/salah.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#mbappe {
+    background-image: url(./Images/card-photo/mbappe.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#vlahovic {
+    background-image: url(./Images/card-photo/vlahovic.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+a{
+    -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    color: inherit;
+    text-decoration: none;
+}
+img{
+    width: 3.3em;
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    font-size: 0.7rem;
+    background: rgba(17, 17, 17, 0.5);
+    height: 16vh;
+}
+.navbar-container{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navbar-menu{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.navbar-menu li{
+    transition: all .3s ease-in-out;
+}
+.navbar-menu li:hover{
+    transform: scale(0.95);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.card-container{
+    display: flex;
+    justify-content: center;
+    padding: 5em;
+}
+.logo-icon{
+    color: white;
+    transition: all .35s ease-in;
 }
 
-* {
-  box-sizing: border-box;
+.logo-icon:hover{
+    transform: rotate(180deg) scale(.95);
+    color: #C8102E;
+}
+.league{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5em 0.8em 2em 0.8em;
+}
+.league-name{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+    /* main*/
+
+.players-grid{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 2em;
+    justify-content: center;
+    min-height: 100vh;
+}
+/*
+    season 
+*/
+
+.season{
+    display: flex;
+    align-items: center;
+    
+}
+.season select{
+    margin-left: .5em;
+    border: unset;
+    background-color: transparent;
+    font-size: 0.7rem;
+    color: #ffffff;
+    opacity: 0.7;
+    font-weight: 800;
+}
+@media screen and (min-width: 820px){
+    .navbar{
+        height: unset;
+        justify-content: flex-end;
+    }
+    .navbar-container{
+        flex-direction: row;
+    }
+    .home-logo{
+        position: relative;
+        right: 55vw;
+    }
+    .navbar-menu{
+        right: 10vw;
+    }
+    .players-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        justify-items: center;
+        }
+        
+        #lewy { grid-area: 1 / 1 / 5 / 7; }
+        #benzema { grid-area: 1 / 7 / 5 / 13; }
+        #salah { grid-area: 5 / 1 / 9 / 7; }
+        #mbappe { grid-area: 5 / 7 / 9 / 13; }
+        #vlahovic { grid-area: 9 / 4 / 13 / 10; }
+
+    article{
+            width: 45vw !important;
+        }
+        
+}
+
+@media screen and (min-width: 1500px){
+    .home-logo{
+        right: 70vw;
+    }
+    .players-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+        
+        #lewy { grid-area: 1 / 1 / 7 / 5; }
+        #benzema { grid-area: 1 / 5 / 7 / 9; }
+        #salah { grid-area: 1 / 9 / 7 / 13; }
+        #mbappe { grid-area: 7 / 3 / 13 / 7; }
+        #vlahovic { grid-area: 7 / 7 / 13 / 11; }
+
+}
+
+/*
+    =======card
+*/
+article{
+    display: flex;
+    flex-direction: column;
+    background: no-repeat;
+    background-position: center center;
+    margin: 2em 0.25em 0 0.5em;
+    border-radius: 50px;
+    min-height: 40em;
+    height: 90vh;
+    max-height: 60em;
+    width: 90vw;
+    min-width: 360px;
+    max-width: 450px;
+    justify-content: space-between;
+    transition: all 500ms ease-in-out;
+}
+.wrapper-link{
+    min-height: 63%;
+}
+
+article:hover{
+    transform: translate(20px, -20px);
+    box-shadow: #ffd700 -5px 5px, #ffd700 -10px 10px, #ffd700 -10px 10px, #ffd700 -10px 10px;
+}
+/*
+    ==========players
+*/
+#lewy {
+    background-color: rgb(0,102,178);
+}
+#bayern{
+    background-color: #DC052D;
+}
+#lewa{
+    color: #DC052D;
+}
+#benzema{
+    background-color: #FEBE10;
+}
+#real{
+    background-color: #00529F;
+}
+#benze{
+    color: #EE324E;
+}
+#salah{
+    background-color: #00B2A9;
+}
+#pool{
+    background-color: #C8102E;
+}
+#sal{
+    color: #F6EB61;
+}
+#mbappe{
+    background-color: #ffffff;
+}
+#psg{
+    background-color: #004170;
+}
+#mbap{
+    color: #DA291C;
+}
+#vlahovic{
+    background-color: #000000;
+}
+#juve{
+    background-color: #ffffff;
+}
+#vla{
+    color: #ffffff;
+}
+#vlahovic h3, #vlahovic h2{
+    color: #000000;
+}
+
+/*
+    =======header
+*/
+.major{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+}
+h2{
+    font-size: 1rem;
+    color: #ffffff;
+}
+.season{
+    padding-right: 2em;
+}
+#mbappe .major .season{
+    color: black;
+    opacity: 0.5;
+}
+#vlahovic .major .season{
+    color: white;
+    opacity: 0.5;
+}
+h3{
+    font-size: 0.7rem;
+    color: #ffffff;
+    opacity: 0.7;
+}
+div h3{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+p{
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+/*
+    =======card footer
+*/
+.card-foot{
+    width: 100%;
+    min-height: 15%;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    position: inherit;
+}
+.player-info{
+    text-align: center;
+}
+
+.basic-info{
+    display: flex;
+    padding: 1em 2em 1em 2em;
+    justify-content: space-between;
+}
+.stats{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em 2em 1em 2em;
+}
+    /*footer*/
+footer{
+    font-size: 0.9rem;
+}
+.credits{
+    background: rgb(53, 52, 52);
+    min-height: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1em 1.5em 1em 1.5em;
+}
+.navigation{
+    display: flex;
+}
+/*
+    =========contact form
+*/
+
+label {
+    color: #ffffff;
+    display: block;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    margin: 0 0 1em 0;
+}
+input[type="text"], textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: rgba(212, 212, 255, 0.035);
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    width: 100%;
+    height: 3em;
+}
+
+input, textarea{
+    color: #ffffff;
+}
+/*
+    ============ buttons
+*/
+textarea:focus, input:focus {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+input[type="reset"]{
+    color: #ffffff;
+    text-transform: uppercase;
+    box-shadow: none;
+    background-color: transparent;
+    border: 0;
+    transition: all .2s ease-in-out;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 2px #ffffff;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-top: 0.6em;
+    height: 3.5em;
+    letter-spacing: 0.25em;
+    line-height: 3.5em;
+    padding: 0 1.75em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+input[type="submit"] {
+    color: #242943;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    box-shadow: none;
+    border: 0;
+    transition: all .2s ease-in-out;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 2px #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.5em;
+    letter-spacing: 0.25em;
+    line-height: 3.5em;
+    padding: 0 1.75em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+input[type="submit"]:hover{
+    transform: scale(1.05);
+}
+input[type="reset"]:hover{
+    transform: scale(1.025);
+}
+#message{
+    min-height: 6em;
+}
+.fields{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.actions{
+    display: flex;
+    align-items: baseline;
+}
+ul.actions :nth-child(2n) {
+    padding: 0 0 0 1em;
+    vertical-align: middle;
+}
+.actions li {
+    padding-top: 1.5em;
+}
+.socials{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em;
+}
+.socials i{
+    padding-right: 0.5em;
+    color: white;
+    transition: all 500ms ease-out;
+}
+.socials i:hover{
+    transform: scale(.9);
+}
+h1{
+    margin-bottom: 1em;
+    color: white;
+}
+.credits>div {
+    padding: 1em 3em 1em 1em;
+}
+.errorpage{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    padding: 10em;
+}
+.card-container article .wrapper-link{
+   height: 0%;
 }
