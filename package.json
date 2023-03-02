@@ -9,11 +9,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@babel/helper-module-imports": "^7.18.6",
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@tanstack/react-query": "^4.20.0",
     "@trpc/client": "^10.9.0",
     "@trpc/next": "^10.9.0",
     "@trpc/react-query": "^10.9.0",
     "@trpc/server": "^10.9.0",
+    "babel-plugin-macros": "^3.1.0",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
